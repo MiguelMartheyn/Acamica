@@ -1,6 +1,10 @@
 
 import Main from './Main';
 import React, { useEffect, useState } from "react";
+import SemanticHeader from '../semanticUi/SemanticHeader';
+import { Container, List } from "semantic-ui-react";
+import pkg from 'semantic-ui-react/package.json'
+import '../index.css'
 
 
 const Header = () =>{
@@ -99,13 +103,20 @@ const Header = () =>{
         
         
     //   }, []);
-
+    const styleLink = document.createElement("link");
+    styleLink.rel = "stylesheet";
+    styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
+    document.head.appendChild(styleLink);
     return (
-      <div>
-        <h1>Holis Header</h1>
-       { usuarios.name}
-       {usuarios.points}
-
+      <div >
+        <div className='header'>
+        
+            <SemanticHeader
+              name={usuarios.name}
+              coin={usuarios.points}
+            />
+        </div>
+       
 
        
 
