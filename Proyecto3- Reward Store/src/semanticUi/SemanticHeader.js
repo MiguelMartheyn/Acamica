@@ -4,7 +4,7 @@ import SemanticCoin from './SemanticCoin'
 import SemanticModalCoin from './SemanticModalCoin'
 import '../index.css'
 
-const HeaderExampleImage = ({name,coin}) => (
+const HeaderExampleImage = ({name,coin,changePoints}) => (
   <Header as='h2'>
   
     <Image circular src='https://react.semantic-ui.com/images/avatar/large/patrick.png' /> <div className='user'>{name}</div>
@@ -15,7 +15,9 @@ const HeaderExampleImage = ({name,coin}) => (
     />
     </div>
     <div className='modal-points'>
-    <SemanticModalCoin/>
+    <SemanticModalCoin
+      changePoints={changePoints}
+    />
     </div>
   </Header>
 )

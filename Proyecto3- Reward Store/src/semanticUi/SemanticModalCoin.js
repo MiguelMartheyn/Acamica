@@ -2,9 +2,16 @@ import React from 'react'
 import { Button, Header, Icon, Modal } from 'semantic-ui-react'
 import SemanticCoinAumentar from './SemanticCoinAumentar'
 
-function ModalExampleCloseIcon() {
+function ModalExampleCloseIcon({changePoints}) {
   const [open, setOpen] = React.useState(false)
   const [select, setSelect] = React.useState(0)
+
+  React.useEffect(() => {
+    
+       changePoints(select);
+       console.log('useEffect select: '+select)
+  }, [select]);
+   
 
   return (
     <Modal
