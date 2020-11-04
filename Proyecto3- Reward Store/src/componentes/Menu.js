@@ -8,7 +8,7 @@ function Menu () {
    
     return (
       <div>
-        <h1>Holis Menu</h1>
+        <h1> Menu</h1>
         <Cards/>
       </div>
     );

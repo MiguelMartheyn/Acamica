@@ -8,7 +8,7 @@ function SubMenu (){
     
     return (
       <div>
-        <h1>Holis SubMenu</h1>
+        <h1>SubMenu</h1>
 
       </div>
     );
