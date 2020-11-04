@@ -1,5 +1,6 @@
 import React from "react";
 import Menu from './Menu';
+import main from '../images/main.png'
 
 
 function Main (){
@@ -8,7 +9,13 @@ function Main (){
    
     return (
       <div>
-        <h1> Main</h1>
+         <div className='container-img-main'>
+          <img className='img-main' src={main} alt={main} height='20%' width='100%'/>
+          <div className='overlay'>
+          <div className="text-main">Electronics</div>
+          </div>
+         </div>
+        
         <Menu/>
       </div>
     );
