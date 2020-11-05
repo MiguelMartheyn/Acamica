@@ -4,7 +4,8 @@ import SemanticCard from '../semanticUiCard/SemanticCard'
 
 
 function Cards ({usuarios}) {
-  const cards = usuarios?
+  
+  const cards = usuarios.length > 0?
   usuarios.redeemHistory.map((card) => (
     
     <SemanticCard

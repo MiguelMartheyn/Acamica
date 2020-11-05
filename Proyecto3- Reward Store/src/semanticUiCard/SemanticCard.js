@@ -12,7 +12,7 @@ const CardExampleCard = ({name,category,image}) => (
         Valor
       </a>
     </Card.Content>
-    <Image src= {Macbook} wrapped ui={false} />
+    <Image src= {image} wrapped ui={false} />
     <Card.Content>
       <Card.Header>{category}</Card.Header>
       <Card.Meta>
