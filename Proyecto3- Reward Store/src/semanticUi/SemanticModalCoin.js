@@ -14,10 +14,10 @@ function ModalExampleCloseIcon({changePoints}) {
    
 
   return (
-    <Modal
+    <Modal 
       closeIcon
       open={open}
-      trigger={<Button onClick={() => setSelect(0)} >More Points</Button>}
+      trigger={<Button circular onClick={() => setSelect(0)} >More Points</Button>}
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
     >

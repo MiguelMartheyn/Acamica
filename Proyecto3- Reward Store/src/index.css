@@ -5,38 +5,34 @@
   font-family: "Rubik", sans-serif;
 }
 
-.app{
+.app {
   padding: 10px;
-  
 }
 
 /* Inicio Estilos Header */
 
-.header{
+.header {
   display: flex;
   padding: 15px;
   justify-content: flex-end;
 }
 
-.user{
+.user {
   padding-top: 17px;
   padding-left: 5px;
 }
 
-.points{
+.points {
   display: flex;
   padding: 9px;
   padding-top: 15px;
   margin-right: 0px;
-  
 }
 
-.modal-points{
+.modal-points {
   display: flex;
   padding: 9px;
-  
 }
-
 
 /*Inicio Resposive Designe */
 /* @media screen and (max-width:1200px) {
@@ -69,15 +65,12 @@
 } */
 /*Final Resposive Designe */
 
-
 /* Final Estilos Header */
 
 /* Inicio estilos Main */
 
-
 .container-img-main {
   position: relative;
-  
 }
 
 .img-main {
@@ -91,11 +84,11 @@
   bottom: 100%;
   left: 0;
   right: 0;
-  background-color: #008CBA;
+  background-color: #008cba;
   overflow: hidden;
   width: 100%;
-  height:0;
-  transition: .5s ease;
+  height: 0;
+  transition: 0.5s ease;
 }
 
 .container-img-main:hover .overlay {
@@ -104,15 +97,78 @@
 }
 
 .text-main {
-  white-space: nowrap; 
+  white-space: nowrap;
   color: white;
-  font-size: 20px;
+  font-size: 28px;
   position: absolute;
   overflow: hidden;
   top: 50%;
   left: 50%;
+  font-family: SourceSansPro-Bold;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
 
+/* referencia: https://es.stackoverflow.com/questions/81332/c%C3%B3mo-poner-texto-sobre-una-imagen-en-html */
+
 /*Final estilos main */
+
+/*Inicio estilos menu */
+
+.menu {
+  padding: 15px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.semanticMenu {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.semanticFirst {
+  display: flex;
+  align-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.semanticMenuText {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 15px;
+}
+.semanticMenuTextProduct {
+  border-right: 1px solid gray;
+}
+
+.semanticFlechas {
+  padding-top: 15px;
+}
+
+/* Final estilos menu */
+
+/* Inicio estilos card */
+
+.cards{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  padding: 15px;
+
+}
+.card{
+  padding: 10px;
+}
+
+/* Final estilos card */
+
+/*Inicio estilos submenu */
+.submenu{
+  padding-right: 60px;
+  padding-left: 60px;
+}
+
+/* Final estilos submenu */

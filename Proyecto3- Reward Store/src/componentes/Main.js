@@ -1,9 +1,10 @@
 import React from "react";
 import Menu from './Menu';
 import main from '../images/main.png'
+import '../index.css'
 
 
-function Main (){
+function Main ({usuarios}){
    
   
    
@@ -16,7 +17,9 @@ function Main (){
           </div>
          </div>
         
-        <Menu/>
+        <Menu
+          usuarios={usuarios}
+        />
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import SemanticSubMenu from '../semanticUiSubMenu/SemanticSubMenu.js';
 
 
 
@@ -7,8 +8,8 @@ function SubMenu (){
   
     
     return (
-      <div>
-        <h1>SubMenu</h1>
+      <div className='submenu'>
+        <SemanticSubMenu/>
 
       </div>
     );

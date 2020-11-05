@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import SemanticHeader from '../semanticUi/SemanticHeader';
 import { Container, List } from "semantic-ui-react";
 import pkg from 'semantic-ui-react/package.json'
+import Macbook from '../images/MacbookPro-x1.png'
+import AcerAspire from '../images/AcerAspire-x1.png';
+import Nintendo from '../images/Nintendo3DS-x1.png';
 import '../index.css'
 
 
@@ -17,7 +20,7 @@ function Header () {
         "redeemHistory": [
           {
             "img": {
-              "url": "https://aerolab-challenge.now.sh/images/AcerAspire-x1.png",
+              "url": AcerAspire,
               "hdUrl": "https://aerolab-challenge.now.sh/images/AcerAspire-x2.png"
             },
             "createDate": "2020-06-27T18:44:51.803Z",
@@ -25,11 +28,11 @@ function Header () {
             "name": "Acer Aspire E1-522",
             "cost": 600,
             "category": "Laptops",
-            "_id": "5e59e22c742352001ed90974"
+            "_id": "5e59e22c742352001ed90977"
           },
           {
             "img": {
-              "url": "https://aerolab-challenge.now.sh/images/MacbookPro-x1.png",
+              "url": Macbook,
               "hdUrl": "https://aerolab-challenge.now.sh/images/MacbookPro-x2.png"
             },
             "createDate": "2020-06-27T18:44:57.707Z",
@@ -37,11 +40,11 @@ function Header () {
             "name": "Macbook Pro",
             "cost": 1300,
             "category": "Laptops",
-            "_id": "5e59e22c742352001ed90974"
+            "_id": "5e59e22c742352001ed90975"
           },
           {
             "img": {
-              "url": "https://aerolab-challenge.now.sh/images/Switch-x1.png",
+              "url": Nintendo,
               "hdUrl": "https://aerolab-challenge.now.sh/images/Switch-x2.png"
             },
             "createDate": "2020-06-27T18:45:02.906Z",
@@ -49,7 +52,7 @@ function Header () {
             "name": "Nintendo Switch 32GB",
             "cost": 300,
             "category": "Gaming",
-            "_id": "5e59e22c742352001ed90974"
+            "_id": "5e59e22c742352001ed90976"
           }
         ],
         "createDate": "2020-06-08T02:12:41.487Z",
@@ -173,7 +176,10 @@ function Header () {
 
        
 
-        <Main/>
+        <Main
+          usuarios={usuarios}
+        />
+        
       </div>
     );
   }

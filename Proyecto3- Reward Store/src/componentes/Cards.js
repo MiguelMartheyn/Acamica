@@ -1,14 +1,25 @@
 import React from "react";
 import SubMenu from './SubMenu';
+import SemanticCard from '../semanticUiCard/SemanticCard'
 
 
-function Cards () {
-   
+function Cards ({usuarios}) {
+  const cards = usuarios?
+  usuarios.redeemHistory.map((card) => (
+    
+    <SemanticCard
+      name={card.name}
+      image={card.img.url}
+      createDate={card.createDate}
+      cost={card.cost}
+      key={card.productId}
+      category={card.category}
+    />)):<h1>No hay Productos disponibles</h1>
   
     
     return (
       <div>
-        <h1> Cards</h1>
+      <div className='cards'>{cards}</div>
         <SubMenu/>
       </div>
     );

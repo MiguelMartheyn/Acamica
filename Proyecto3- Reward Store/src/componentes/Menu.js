@@ -1,17 +1,22 @@
 import React from "react";
 import Cards from './Cards';
+import SemanticMenu from '../semanticUi-Menu/SemanticMenu'
 
 
-function Menu () {
+function Menu ({usuarios}) {
    
   
    
     return (
-      <div>
-        <h1> Menu</h1>
-        <Cards/>
+      <div >
+      <div className='menu'>
+        <SemanticMenu/>
+        </div>
+      <Cards usuarios={usuarios}/>
       </div>
     );
   }
 
   export default Menu;
+
+  
