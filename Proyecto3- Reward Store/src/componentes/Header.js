@@ -12,7 +12,7 @@ function Header() {
 
   useEffect(() => {
     user({ usuarios, setUsuarios, fetched, setFetched });
-  }, [fetched]);
+  }, [fetched,usuarios]);
 
   const styleLink = document.createElement("link");
   styleLink.rel = "stylesheet";
