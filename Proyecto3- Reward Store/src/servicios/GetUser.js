@@ -35,7 +35,8 @@ export function user({ usuarios, setUsuarios, fetched, setFetched }) {
     numberVal,
     setNumber,
     name,
-    coin
+    coin,
+    products
   }) {
     var request = new XMLHttpRequest();
   
@@ -53,7 +54,8 @@ export function user({ usuarios, setUsuarios, fetched, setFetched }) {
         setFetched(true);
         setUsuarios({
           name: name,
-          points: coin + numberVal
+          points: coin + numberVal,
+          products: products
         });
         setNumber(numberVal);
   

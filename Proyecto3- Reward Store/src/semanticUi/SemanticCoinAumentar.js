@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Icon, Label } from "semantic-ui-react";
 import { points } from "../servicios/GetUser";
 
-function ButtonExampleLabeled({ usuarios, setUsuarios, name, coin }) {
+function ButtonExampleLabeled({ usuarios, setUsuarios, name, coin,products }) {
   const [fetched, setFetched] = React.useState(false);
   const [number, setNumber] = React.useState(0);
 
@@ -16,7 +16,8 @@ function ButtonExampleLabeled({ usuarios, setUsuarios, name, coin }) {
       number,
       setNumber,
       name,
-      coin
+      coin,
+      products
     });
   };
 

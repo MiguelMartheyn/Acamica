@@ -28,6 +28,7 @@ function Header() {
           coin={usuarios.points}
           usuarios={usuarios}
           setUsuarios={setUsuarios}
+          products={usuarios.products}
         />
       </div>
 

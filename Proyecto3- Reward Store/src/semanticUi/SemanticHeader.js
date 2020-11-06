@@ -4,7 +4,7 @@ import SemanticCoin from "./SemanticCoin";
 import SemanticModalCoin from "./SemanticModalCoin";
 import "../index.css";
 
-const HeaderExampleImage = ({ name, coin, usuarios, setUsuarios }) => (
+const HeaderExampleImage = ({ name, coin, usuarios, setUsuarios ,products}) => (
   <Header as="h2">
     <Image
       circular
@@ -20,6 +20,7 @@ const HeaderExampleImage = ({ name, coin, usuarios, setUsuarios }) => (
         setUsuarios={setUsuarios}
         name={name}
         coin={coin}
+        products={products}
       />
     </div>
   </Header>
