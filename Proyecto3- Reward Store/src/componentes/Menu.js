@@ -1,9 +1,14 @@
 import React from "react";
 import Cards from './Cards';
 import SemanticMenu from '../semanticUi-Menu/SemanticMenu'
-
+import {products} from '../servicios/GetUser'
 
 function Menu ({usuarios}) {
+  
+
+ 
+   
+   
    
   
    
@@ -14,6 +19,7 @@ function Menu ({usuarios}) {
         </div>
       <Cards 
         usuarios={usuarios}
+      
       />
       </div>
     );

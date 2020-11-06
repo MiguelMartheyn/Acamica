@@ -19,6 +19,7 @@ function Main ({usuarios}){
         
         <Menu
          usuarios={usuarios}
+        
         />
       </div>
     );

@@ -16,7 +16,7 @@ function ButtonExampleLabeled ({usuarios,setUsuarios,name,coin})  {
 
   return(
   <div>
-    <Button as='div' labelPosition='right' onClick={pointss(1000)}>
+    <Button as='div' labelPosition='right' onClick={()=>pointss(1000)}>
     
       <Button icon>
         <Icon name='money' />
@@ -27,7 +27,7 @@ function ButtonExampleLabeled ({usuarios,setUsuarios,name,coin})  {
       </Label>
     </Button>
 
-    <Button as='div' labelPosition='right' onClick={pointss(5000)} >
+    <Button as='div' labelPosition='right' onClick={()=>pointss(5000)} >
       <Button icon>
         <Icon name='money' />
         
@@ -37,7 +37,7 @@ function ButtonExampleLabeled ({usuarios,setUsuarios,name,coin})  {
       </Label>
     </Button>
 
-    <Button as='div' labelPosition='right' onClick={pointss(7500)}>
+    <Button as='div' labelPosition='right' onClick={()=>pointss(7500)}>
       <Button icon>
         <Icon name='money' />
         

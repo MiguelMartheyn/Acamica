@@ -13,9 +13,11 @@ import {user} from '../servicios/GetUser'
 
 
 
+
 function Header () {
 
-  
+   
+ 
     const [usuarios, setUsuarios] = useState(0);
     const [fetched, setFetched] = useState(false);
 
@@ -26,6 +28,9 @@ function Header () {
         
       }, [fetched]);
 
+     
+
+  
 
     const styleLink = document.createElement("link");
     styleLink.rel = "stylesheet";
@@ -50,6 +55,8 @@ function Header () {
 
         <Main
           usuarios={usuarios}
+         
+         
         />
         
       </div>
