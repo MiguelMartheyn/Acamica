@@ -1,42 +1,42 @@
-import React,{useEffect} from "react";
-import SubMenu from './SubMenu';
-import SemanticCard from '../semanticUiCard/SemanticCard'
-import {products} from '../servicios/GetUser'
+import Main from "./Main";
+import React, { useEffect } from "react";
+import SemanticHeader from "../semanticUi/SemanticHeader";
+import "../index.css";
+import { user } from "../servicios/GetUser";
 
+function Header() {
+  const [usuarios, setUsuarios] = React.useState(0);
+  const [fetched, setFetched] = React.useState(false);
 
+  useEffect(() => {
+    user({ usuarios, setUsuarios, fetched, setFetched });
+  }, [fetched]);
 
-function Cards ({usuarios}) {
-  const [fetched2, setFetched2] = React.useState(false)
-   const [productss, setProductss] = React.useState([])
+  const styleLink = document.createElement("link");
+  styleLink.rel = "stylesheet";
+  styleLink.href =
+    "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
+  document.head.appendChild(styleLink);
 
-  
-   React.useEffect(() => {
-
-        
-    products({productss,setProductss,fetched2, setFetched2,usuarios})
-   
-    
-  }, [fetched2]);
-
-  const cards = productss.length > 0?
-  productss.map((card) => (
-    
-    <SemanticCard
-      name={card.name}
-      image={card.img.url}
-      createDate={card.createDate}
-      cost={card.cost}
-      key={card.productId}
-      category={card.category}
-    />)):<h1>No hay Productos disponibles</h1>
-  
-    
-    return (
-      <div>
-      <div className='cards'>{cards}</div>
-        <SubMenu/>
+  return (
+    <div>
+      <div className="header">
+        <SemanticHeader
+          name={usuarios.name}
+          coin={usuarios.points}
+          usuarios={usuarios}
+          setUsuarios={setUsuarios}
+        />
       </div>
-    );
-  }
 
-  export default Cards;
+      <Main
+        usuarios={usuarios}
+        setUsuarios={setUsuarios}
+        name={usuarios.name}
+        coin={usuarios.points}
+      />
+    </div>
+  );
+}
+
+export default Header;

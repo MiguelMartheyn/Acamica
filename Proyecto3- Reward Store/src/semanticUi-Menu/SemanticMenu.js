@@ -35,3 +35,4 @@ const ButtonExampleAnimated = () => (
 );
 
 export default ButtonExampleAnimated;
+
