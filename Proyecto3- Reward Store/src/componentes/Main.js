@@ -18,7 +18,7 @@ function Main ({usuarios}){
          </div>
         
         <Menu
-          usuarios={usuarios}
+         usuarios={usuarios}
         />
       </div>
     );

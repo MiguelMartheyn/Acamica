@@ -12,7 +12,9 @@ function Menu ({usuarios}) {
       <div className='menu'>
         <SemanticMenu/>
         </div>
-      <Cards usuarios={usuarios}/>
+      <Cards 
+        usuarios={usuarios}
+      />
       </div>
     );
   }

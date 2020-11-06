@@ -2,22 +2,15 @@ import React from 'react'
 import { Button, Header, Icon, Modal } from 'semantic-ui-react'
 import SemanticCoinAumentar from './SemanticCoinAumentar'
 
-function ModalExampleCloseIcon({changePoints}) {
+function ModalExampleCloseIcon({usuarios,setUsuarios,name,coin}) {
   const [open, setOpen] = React.useState(false)
-  const [select, setSelect] = React.useState(0)
-
-  React.useEffect(() => {
-    
-       changePoints(select);
-       console.log('useEffect select: '+select)
-  }, [select]);
-   
+  
 
   return (
     <Modal 
       closeIcon
       open={open}
-      trigger={<Button circular onClick={() => setSelect(0)} >More Points</Button>}
+      trigger={<Button circular  >More Points</Button>}
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
     >
@@ -30,15 +23,13 @@ function ModalExampleCloseIcon({changePoints}) {
         <p>Por favor elige el numero de Points que deseas</p>
         
         <SemanticCoinAumentar
+            usuarios={usuarios}
+            setUsuarios={setUsuarios}
+            name={name}
+            coin={coin}
             
-            setSelect={setSelect}
         />
-{
-        select > 0 && 
-        <h1> Aumentaste tus Points en: {select}</h1>
-        
 
-      }
      
       </Modal.Content>
       

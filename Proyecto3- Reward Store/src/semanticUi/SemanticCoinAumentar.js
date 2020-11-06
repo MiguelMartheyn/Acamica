@@ -1,9 +1,22 @@
 import React from 'react'
 import { Button, Icon, Label } from 'semantic-ui-react'
+import {points} from '../servicios/GetUser'
 
-const ButtonExampleLabeled = ({setSelect}) => (
+function ButtonExampleLabeled ({usuarios,setUsuarios,name,coin})  {
+  
+  const [fetched, setFetched] = React.useState(false)
+  const [number, setNumber] = React.useState(0)
+
+ 
+   const pointss =(numberVal)=>{
+     points({usuarios,setUsuarios,fetched,setFetched,numberVal,number,setNumber,name,coin});
+
+   }
+
+
+  return(
   <div>
-    <Button as='div' labelPosition='right' onClick={() => setSelect(1000)}>
+    <Button as='div' labelPosition='right' onClick={pointss(1000)}>
     
       <Button icon>
         <Icon name='money' />
@@ -14,7 +27,7 @@ const ButtonExampleLabeled = ({setSelect}) => (
       </Label>
     </Button>
 
-    <Button as='div' labelPosition='right' onClick={() => setSelect(5000)} >
+    <Button as='div' labelPosition='right' onClick={pointss(5000)} >
       <Button icon>
         <Icon name='money' />
         
@@ -24,7 +37,7 @@ const ButtonExampleLabeled = ({setSelect}) => (
       </Label>
     </Button>
 
-    <Button as='div' labelPosition='right' onClick={() => setSelect(7500)}>
+    <Button as='div' labelPosition='right' onClick={pointss(7500)}>
       <Button icon>
         <Icon name='money' />
         
@@ -33,7 +46,15 @@ const ButtonExampleLabeled = ({setSelect}) => (
         7,500
       </Label>
     </Button>
+
+    {
+        number > 0 && 
+        <h1> Aumentaste tus Points en: {number}</h1>
+        
+
+      }
   </div>
 )
+  }
 
 export default ButtonExampleLabeled

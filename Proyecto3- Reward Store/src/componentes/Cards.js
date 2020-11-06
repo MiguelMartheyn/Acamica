@@ -3,8 +3,10 @@ import SubMenu from './SubMenu';
 import SemanticCard from '../semanticUiCard/SemanticCard'
 
 
-function Cards ({usuarios}) {
+function Cards () {
   
+
+  const usuarios = [];
   const cards = usuarios.length > 0?
   usuarios.redeemHistory.map((card) => (
     

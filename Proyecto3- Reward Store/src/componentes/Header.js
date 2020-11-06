@@ -19,13 +19,6 @@ function Header () {
     const [usuarios, setUsuarios] = useState(0);
     const [fetched, setFetched] = useState(false);
 
-    const changePoints=(value)=>{
-      
-      console.log(value)
-      
-    }
-
-
 
     useEffect(() => {
 
@@ -46,7 +39,9 @@ function Header () {
             <SemanticHeader
               name={usuarios.name}
               coin={usuarios.points}
-              changePoints={changePoints}
+              usuarios={usuarios}
+              setUsuarios={setUsuarios}
+              
             />
         </div>
        
