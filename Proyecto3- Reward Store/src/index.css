@@ -161,6 +161,32 @@
 }
 .card{
   padding: 10px;
+  
+}
+
+.card:hover{
+  background-color: gray;
+  opacity: 90%;
+  font-weight: bold;
+  padding: 0%;
+  margin: 0%;
+}
+
+
+.span-semanticCard{
+ 
+  cursor: pointer;
+}
+
+
+.semanticCardCompra{
+  margin-left: 80%;
+ 
+}
+
+
+.semanticCardNoCompraText{
+  padding-top: 5%;
 }
 
 /* Final estilos card */
@@ -171,13 +197,6 @@
   padding-left: 60px;
 }
 
-.span-semanticCard{
-  margin-left: 52%;
-  cursor: pointer;
-}
-.span-semanticCard:hover{
-  color: #008cba;
 
-}
 
 /* Final estilos submenu */
