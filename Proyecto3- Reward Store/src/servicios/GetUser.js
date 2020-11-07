@@ -1,4 +1,4 @@
-export function user({ usuarios, setUsuarios, fetched, setFetched }) {
+export function user({ usuarios, setUsuarios, fetched, setFetched ,compra}) {
     const requestInit = {
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export function user({ usuarios, setUsuarios, fetched, setFetched }) {
           });
           name = userList.name;
           coin = userList.points;
-          products({ usuarios, setUsuarios, name, coin });
+          products({ usuarios, setUsuarios, name, coin ,compra});
         });
     }
   }
@@ -74,7 +74,7 @@ export function user({ usuarios, setUsuarios, fetched, setFetched }) {
     request.send(JSON.stringify(body));
   }
   
-  function products({ usuarios, setUsuarios, name, coin }) {
+  function products({ usuarios, setUsuarios, name, coin,compra }) {
     const requestInit = {
       headers: {
         "Content-Type": "application/json",
@@ -93,29 +93,29 @@ export function user({ usuarios, setUsuarios, fetched, setFetched }) {
           points: coin,
           products: userList
         });
-         historial({ usuarios, setUsuarios, name, coin ,userList})
+         
       });
   }
   
-  function historial({ usuarios, setUsuarios, name, coin ,userList}) {
-    const requestInit = {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk"
-      }
-    };
+  // export default function historial({ usuarios, setUsuarios, name, coin ,userList}) {
+  //   const requestInit = {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization:
+  //         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk"
+  //     }
+  //   };
   
-    const endPoint = "https://coding-challenge-api.aerolab.co/user/history";
+  //   const endPoint = "https://coding-challenge-api.aerolab.co/user/history";
   
-    fetch(endPoint, requestInit)
-      .then((response) => response.json())
-      .then((userList2) => {
-        setUsuarios({
-          name: name,
-          points: coin,
-          products: userList,
-          historial:userList2
-        });
-      });
-  }
+  //   fetch(endPoint, requestInit)
+  //     .then((response) => response.json())
+  //     .then((userList2) => {
+  //       setUsuarios({
+  //         name: name,
+  //         points: coin,
+  //         products: userList,
+  //         historial:userList2
+  //       });
+  //     });
+  // }

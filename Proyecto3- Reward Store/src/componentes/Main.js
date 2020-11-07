@@ -3,7 +3,7 @@ import Menu from "./Menu";
 import main from "../images/main.png";
 import "../index.css";
 
-function Main({ usuarios, name, coin, setUsuarios }) {
+function Main({ usuarios, name, coin, setUsuarios,compra,setCompra}) {
   return (
     <div>
       <div className="container-img-main">
@@ -24,6 +24,8 @@ function Main({ usuarios, name, coin, setUsuarios }) {
         coin={coin}
         usuarios={usuarios}
         setUsuarios={setUsuarios}
+        compra={compra}
+        setCompra={setCompra}
         
       />
     </div>

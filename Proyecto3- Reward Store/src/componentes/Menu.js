@@ -2,7 +2,7 @@ import React from "react";
 import Cards from "./Cards";
 import SemanticMenu from "../semanticUi-Menu/SemanticMenu";
 
-function Menu({ usuarios, coin, name, setUsuarios}) {
+function Menu({ usuarios, coin, name, setUsuarios,compra,setCompra}) {
   const[pagina,setPagina] = React.useState(1);
 
   return (
@@ -22,6 +22,8 @@ function Menu({ usuarios, coin, name, setUsuarios}) {
         setUsuarios={setUsuarios}
         pagina={pagina}
         setPagina={setPagina}
+        compra={compra}
+        setCompra={setCompra}
       />
       
     </div>

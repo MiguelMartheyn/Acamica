@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Icon, Image } from "semantic-ui-react";
 
-const CardExampleCard = ({ name, category, image ,cost,points}) => (
+const CardExampleCard = ({ name, category, image ,cost,points,compra,setCompra}) => (
   <div className="card">
     <Card>
       <Card.Content extra>
@@ -9,7 +9,7 @@ const CardExampleCard = ({ name, category, image ,cost,points}) => (
           <Icon name="money" />
            {cost}
         </a>
-        <span className='span-semanticCard'>
+        <span className='span-semanticCard' onClick={()=>setCompra(true)}>
           <Icon name="money" />
            {points}
         </span>

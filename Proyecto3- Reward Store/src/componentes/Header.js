@@ -9,10 +9,11 @@ import { user } from "../servicios/GetUser";
 function Header() {
   const [usuarios, setUsuarios] = React.useState(0);
   const [fetched, setFetched] = React.useState(false);
+  const [compra,setCompra]= React.useState(false)
   
 
   useEffect(() => {
-    user({ usuarios, setUsuarios, fetched, setFetched });
+    user({ usuarios, setUsuarios, fetched, setFetched,compra });
   }, [fetched,usuarios]);
 
   const styleLink = document.createElement("link");
@@ -31,6 +32,7 @@ function Header() {
           setUsuarios={setUsuarios}
           products={usuarios.products}
           historial={usuarios.historial}
+          compra={compra}
           
         />
       </div>
@@ -40,6 +42,8 @@ function Header() {
         setUsuarios={setUsuarios}
         name={usuarios.name}
         coin={usuarios.points}
+        compra={compra}
+        setCompra={setCompra}
         
       />
     </div>

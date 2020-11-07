@@ -7,23 +7,23 @@ const ModalExampleScrollingContent = ({usuarios}) => {
   const [open, setOpen] = React.useState(false)
 
 
-  const val = usuarios.historial?  usuarios.historial: []
+  const val = usuarios.historial?  usuarios.historial.filter(filter => filter.img.url) : []
 
 
-  const cards = usuarios.historial ? (
-    val.map((card) => (
+  const cards = usuarios.historial ? usuarios.historial !== []? (
+    val.map((card,index) => (
       <SemanticHistoryCard
         name={card.name}
         image={card.img.url}
         createDate={card.createDate}
         cost={card.cost}
-        key={card._id}
+        key={card.index}
         category={card.category}
         cost={card.cost}
         points={usuarios.points}
       />
     ))
-  ) : (
+  ): <h1>No hay Productos canjeados</h1> : (
     <h1>No hay Productos canjeados</h1>
   );
 
