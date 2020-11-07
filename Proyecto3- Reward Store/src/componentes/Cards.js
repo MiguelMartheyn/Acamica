@@ -16,6 +16,8 @@ function Cards({ usuarios,pagina,setPagina }) {
         cost={card.cost}
         key={card._id}
         category={card.category}
+        cost={card.cost}
+        points={usuarios.points}
       />
     ))
   ) : (

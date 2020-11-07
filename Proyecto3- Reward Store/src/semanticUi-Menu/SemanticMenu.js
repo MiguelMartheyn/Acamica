@@ -5,7 +5,9 @@ const ButtonExampleAnimated = ({pagina,setPagina}) => (
   <div className="semanticMenu">
     <div className="semanticFirst">
       <div className="semanticMenuText">
-        <p className="semanticMenuTextProduct">16 of 32 Products</p>
+      {pagina === 1?
+        <p className="semanticMenuTextProduct">1-16 of 32 Products</p>:
+        <p className="semanticMenuTextProduct">16-32 of 32 Products</p>}
         <p>Sort by:</p>
       </div>
       <Button animated circular>

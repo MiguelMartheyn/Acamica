@@ -1,14 +1,18 @@
 import React from "react";
 import { Card, Icon, Image } from "semantic-ui-react";
 
-const CardExampleCard = ({ name, category, image }) => (
+const CardExampleCard = ({ name, category, image ,cost,points}) => (
   <div className="card">
     <Card>
       <Card.Content extra>
         <a>
           <Icon name="money" />
-          Valor
+           {cost}
         </a>
+        <span className='span-semanticCard'>
+          <Icon name="money" />
+           {points}
+        </span>
       </Card.Content>
       <Image src={image} wrapped ui={false} />
       <Card.Content>

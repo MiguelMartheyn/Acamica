@@ -171,4 +171,13 @@
   padding-left: 60px;
 }
 
+.span-semanticCard{
+  margin-left: 52%;
+  cursor: pointer;
+}
+.span-semanticCard:hover{
+  color: #008cba;
+
+}
+
 /* Final estilos submenu */
