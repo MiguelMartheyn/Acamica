@@ -173,20 +173,26 @@
 }
 
 
-.span-semanticCard{
+/* .span-semanticCard{
  
   cursor: pointer;
-}
+} */
 
 
 .semanticCardCompra{
   margin-left: 80%;
+  cursor: pointer;
  
 }
 
 
 .semanticCardNoCompraText{
+  
   padding-top: 5%;
+}
+.semanticCardNoCompraCoin{
+  
+  cursor: pointer;
 }
 
 /* Final estilos card */

@@ -2,6 +2,10 @@ import React from "react";
 import { Card, Icon, Image,Header } from "semantic-ui-react";
 import buyblue from '../images/buy-blue.svg'
 import coin from '../images/coin.svg'
+import SemanticCardNoCompra from './SemanticCardNoCompra'
+import SemanticCardCompra from './SemanticCardCompra'
+
+
 
 const CardExampleCard = ({ name, category, image ,cost,points,compra,setCompra}) => (
   <div className="card">
@@ -10,13 +14,9 @@ const CardExampleCard = ({ name, category, image ,cost,points,compra,setCompra})
         
          
         
-        <span className='span-semanticCard' onClick={()=>setCompra(true)}>
-        {cost >= points?
-          <Header >
-        
-        <div className='semanticCardNoCompraText'>Te faltan {cost-points}</div>
-        
-          <Image circular src={coin} /> </Header>: <img className='semanticCardCompra' src={buyblue}  />
+        <span className='span-semanticCard' >
+        {cost <= points?
+          <SemanticCardNoCompra cost={cost} points={points} />: <SemanticCardCompra/>
         }
         </span>
       </Card.Content>
