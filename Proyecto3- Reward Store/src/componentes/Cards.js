@@ -2,9 +2,11 @@ import React from "react";
 import SubMenu from "./SubMenu";
 import SemanticCard from "../semanticUiCard/SemanticCard";
 
-function Cards({ usuarios }) {
+function Cards({ usuarios,pagina,setPagina }) {
   
-   const val = usuarios.products? usuarios.products.slice(0,16): []
+   const val = usuarios.products? pagina === 1? usuarios.products.slice(0,16) :usuarios.products.slice(16,32)  : []
+
+
   const cards = usuarios.products ? (
     val.map((card) => (
       <SemanticCard
@@ -24,7 +26,10 @@ function Cards({ usuarios }) {
   return (
     <div>
       <div className="cards">{cards}</div>
-      <SubMenu />
+      <SubMenu
+      pagina={pagina} 
+      setPagina={setPagina}
+      />
     </div>
   );
 }

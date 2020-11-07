@@ -9,6 +9,7 @@ import { user } from "../servicios/GetUser";
 function Header() {
   const [usuarios, setUsuarios] = React.useState(0);
   const [fetched, setFetched] = React.useState(false);
+  
 
   useEffect(() => {
     user({ usuarios, setUsuarios, fetched, setFetched });
@@ -29,6 +30,7 @@ function Header() {
           usuarios={usuarios}
           setUsuarios={setUsuarios}
           products={usuarios.products}
+          
         />
       </div>
 
@@ -37,6 +39,7 @@ function Header() {
         setUsuarios={setUsuarios}
         name={usuarios.name}
         coin={usuarios.points}
+        
       />
     </div>
   );

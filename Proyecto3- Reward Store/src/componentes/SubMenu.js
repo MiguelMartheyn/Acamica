@@ -1,10 +1,13 @@
 import React from "react";
 import SemanticSubMenu from "../semanticUiSubMenu/SemanticSubMenu.js";
 
-function SubMenu() {
+function SubMenu({pagina,setPagina}) {
   return (
     <div className="submenu">
-      <SemanticSubMenu />
+      <SemanticSubMenu 
+        pagina={pagina}
+        setPagina={setPagina}
+      />
     </div>
   );
 }

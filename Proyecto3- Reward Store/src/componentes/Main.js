@@ -24,6 +24,7 @@ function Main({ usuarios, name, coin, setUsuarios }) {
         coin={coin}
         usuarios={usuarios}
         setUsuarios={setUsuarios}
+        
       />
     </div>
   );

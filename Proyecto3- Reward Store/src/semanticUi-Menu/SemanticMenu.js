@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Icon } from "semantic-ui-react";
 
-const ButtonExampleAnimated = () => (
+const ButtonExampleAnimated = ({pagina,setPagina}) => (
   <div className="semanticMenu">
     <div className="semanticFirst">
       <div className="semanticMenuText">
@@ -28,9 +28,14 @@ const ButtonExampleAnimated = () => (
       </Button>
     </div>
     <div className="semanticFlechas">
-      <Button circular icon="arrow alternate circle left outline" />
-      <Button circular icon="arrow alternate circle right outline" />
+    {pagina === 1?<Button circular icon="arrow alternate circle right outline" onClick={()=>setPagina(2)} />:
+    
+      <Button circular icon="arrow alternate circle left outline" onClick={()=>setPagina(1)} />
+      
+      
+    }
     </div>
+    
   </div>
 );
 
