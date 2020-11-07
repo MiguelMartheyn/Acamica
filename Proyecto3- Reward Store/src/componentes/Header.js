@@ -30,6 +30,7 @@ function Header() {
           usuarios={usuarios}
           setUsuarios={setUsuarios}
           products={usuarios.products}
+          historial={usuarios.historial}
           
         />
       </div>

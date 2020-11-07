@@ -5,7 +5,7 @@ import SemanticModalCoin from "./SemanticModalCoin";
 import SemanticModalHistory from '../semanticUi/SemanticModalHistory';
 import "../index.css";
 
-const HeaderExampleImage = ({ name, coin, usuarios, setUsuarios ,products}) => (
+const HeaderExampleImage = ({ name, coin, usuarios, setUsuarios ,products,historial}) => (
   <Header as="h2">
     <Image
       circular
@@ -22,6 +22,7 @@ const HeaderExampleImage = ({ name, coin, usuarios, setUsuarios ,products}) => (
         name={name}
         coin={coin}
         products={products}
+        historial={historial}
       />
     </div>
     <div>

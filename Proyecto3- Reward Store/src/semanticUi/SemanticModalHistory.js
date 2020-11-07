@@ -7,10 +7,10 @@ const ModalExampleScrollingContent = ({usuarios}) => {
   const [open, setOpen] = React.useState(false)
 
 
-  const val = usuarios.products?  usuarios.products.slice(0,16) : []
+  const val = usuarios.historial?  usuarios.historial: []
 
 
-  const cards = usuarios.products ? (
+  const cards = usuarios.historial ? (
     val.map((card) => (
       <SemanticHistoryCard
         name={card.name}

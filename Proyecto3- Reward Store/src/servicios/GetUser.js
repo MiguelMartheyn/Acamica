@@ -36,7 +36,8 @@ export function user({ usuarios, setUsuarios, fetched, setFetched }) {
     setNumber,
     name,
     coin,
-    products
+    products,
+    historial
   }) {
     var request = new XMLHttpRequest();
   
@@ -55,7 +56,8 @@ export function user({ usuarios, setUsuarios, fetched, setFetched }) {
         setUsuarios({
           name: name,
           points: coin + numberVal,
-          products: products
+          products: products,
+          historial:historial
         });
         setNumber(numberVal);
   
@@ -91,6 +93,29 @@ export function user({ usuarios, setUsuarios, fetched, setFetched }) {
           points: coin,
           products: userList
         });
+         historial({ usuarios, setUsuarios, name, coin ,userList})
       });
   }
   
+  function historial({ usuarios, setUsuarios, name, coin ,userList}) {
+    const requestInit = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk"
+      }
+    };
+  
+    const endPoint = "https://coding-challenge-api.aerolab.co/user/history";
+  
+    fetch(endPoint, requestInit)
+      .then((response) => response.json())
+      .then((userList2) => {
+        setUsuarios({
+          name: name,
+          points: coin,
+          products: userList,
+          historial:userList2
+        });
+      });
+  }
