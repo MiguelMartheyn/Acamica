@@ -3,7 +3,7 @@ export function user({ usuarios, setUsuarios, fetched, setFetched, compra }) {
     headers: {
       "Content-Type": "application/json",
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk"
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjlmNzRmMDYwOGE4ODAwMTk1YjliZDgiLCJpYXQiOjE2MDQyODU2ODB9.ctaykhWrBlhUdTgGlnbksoRx3LwszENpALaY64K_OuY"
     }
   };
 
@@ -20,11 +20,13 @@ export function user({ usuarios, setUsuarios, fetched, setFetched, compra }) {
         setFetched(true);
         setUsuarios({
           name: userList.name,
-          points: userList.points
+          points: userList.points,
+          historial: userList.redeemHistory
         });
         name = userList.name;
         coin = userList.points;
-        historial = usuarios.historial;
+        historial = userList.redeemHistory;
+        
         products({ usuarios, setUsuarios, name, coin, compra, historial });
       });
   }
@@ -49,7 +51,7 @@ export function points({
   request.setRequestHeader("Accept", "application/json");
   request.setRequestHeader(
     "Authorization",
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk"
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjlmNzRmMDYwOGE4ODAwMTk1YjliZDgiLCJpYXQiOjE2MDQyODU2ODB9.ctaykhWrBlhUdTgGlnbksoRx3LwszENpALaY64K_OuY"
   );
 
   request.onreadystatechange = function () {
@@ -81,7 +83,7 @@ function products({ usuarios, setUsuarios, name, coin, compra, historial }) {
     headers: {
       "Content-Type": "application/json",
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk"
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjlmNzRmMDYwOGE4ODAwMTk1YjliZDgiLCJpYXQiOjE2MDQyODU2ODB9.ctaykhWrBlhUdTgGlnbksoRx3LwszENpALaY64K_OuY"
     }
   };
 
@@ -119,9 +121,10 @@ export function canjear({
   request.setRequestHeader("Accept", "application/json");
   request.setRequestHeader(
     "Authorization",
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk"
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjlmNzRmMDYwOGE4ODAwMTk1YjliZDgiLCJpYXQiOjE2MDQyODU2ODB9.ctaykhWrBlhUdTgGlnbksoRx3LwszENpALaY64K_OuY"
   );
 
+  let val;
   request.onreadystatechange = function () {
     if (this.readyState === 4) {
       setFetched(true);
@@ -132,6 +135,7 @@ export function canjear({
         historial: historial
       });
 
+      val= points-cost
       history({
         setUsuarios,
         name,
@@ -139,11 +143,9 @@ export function canjear({
         products,
         historial,
         setCompra,
-        cost
+        cost,val
       });
-      console.log("Status:", this.status);
-      console.log("Headers:", this.getAllResponseHeaders());
-      console.log("Body:", this.responseText);
+      
     }
   };
 
@@ -154,31 +156,56 @@ export function canjear({
   request.send(JSON.stringify(body));
 }
 
-function history({ setUsuarios, name, points, products, setCompra, cost }) {
-  var request = new XMLHttpRequest();
+ function history({ setUsuarios, name, points, products, setCompra, cost ,val}) {
+  // var request = new XMLHttpRequest();
 
-  request.open("GET", "https://coding-challenge-api.aerolab.co/user/history");
+  // request.open("GET", "https://coding-challenge-api.aerolab.co/user/history");
 
-  request.setRequestHeader("Content-Type", "application/json");
-  request.setRequestHeader("Accept", "application/json");
-  request.setRequestHeader(
-    "Authorization",
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk"
-  );
+  // request.setRequestHeader("Content-Type", "application/json");
+  // request.setRequestHeader("Accept", "application/json");
+  // request.setRequestHeader(
+  //   "Authorization",
+  //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjlmNzRmMDYwOGE4ODAwMTk1YjliZDgiLCJpYXQiOjE2MDQyODU2ODB9.ctaykhWrBlhUdTgGlnbksoRx3LwszENpALaY64K_OuY"
+  // );
 
-  request.onreadystatechange = function () {
-    if (this.readyState === 4) {
-      console.log("Status:", this.status);
-      console.log("Headers:", this.getAllResponseHeaders());
-      console.log("Body:", this.responseText);
-      setUsuarios({
-        name: name,
-        points: points - cost,
-        products: products,
-        historial: this.responseText
-      });
+  // request.onreadystatechange = function () {
+  //   if (this.readyState === 4) {
+
+  //     setUsuarios({
+  //       name: name,
+  //       points: val,
+  //       products: products,
+  //       historial: this.responseText
+  //     });
+   
+  //   }
+  // };
+
+  // request.send();
+
+  const requestInit = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjlmNzRmMDYwOGE4ODAwMTk1YjliZDgiLCJpYXQiOjE2MDQyODU2ODB9.ctaykhWrBlhUdTgGlnbksoRx3LwszENpALaY64K_OuY"
     }
   };
 
-  request.send();
+  const endPoint = "https://coding-challenge-api.aerolab.co/user/history";
+
+  fetch(endPoint, requestInit)
+    .then((response) => response.json())
+    .then((userList) => {
+      setTimeout(() => {
+      setUsuarios({
+        name: name,
+        points: val,
+        products: products,
+        historial: userList
+      });
+    }, 5000);
+    });
+
+
 }
+

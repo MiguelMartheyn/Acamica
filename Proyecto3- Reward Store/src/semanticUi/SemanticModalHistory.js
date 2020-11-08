@@ -6,40 +6,39 @@ import SemanticHistoryCard from "./SemanticHistoryCard";
 const ModalExampleScrollingContent = ({ usuarios }) => {
   const [open, setOpen] = React.useState(false);
 
-  const val = usuarios.historial
-    ? usuarios.historial.filter((filter) => filter.img.url)
-    : [];
 
-  const cards = usuarios.historial ? (
-    usuarios.historial !== [] ? (
-      val.map((card) => (
+ 
+    
+  
+
+  const cards = usuarios.historial ? 
+    
+      usuarios.historial.map((card) => (
         <SemanticHistoryCard
           name={card.name}
           image={card.img.url}
           createDate={card.createDate}
           cost={card.cost}
-          key={card.productId}
+          
+          key={card.createDate}
           category={card.category}
           cost={card.cost}
           points={usuarios.points}
         />
       ))
-    ) : (
+     : (
       <h1>no products exchanged</h1>
     )
-  ) : (
-    <h1>no products exchanged</h1>
-  );
+ 
 
-  console.log(usuarios);
   return (
     <Modal
       open={open}
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
-      trigger={<Button>Historial de Compras</Button>}
+      trigger={<Button circular>RedeemHistory</Button>}
     >
-      <Modal.Header>Historial de Compras</Modal.Header>
+      <Modal.Header>RedeemHistory</Modal.Header>
       <Modal.Content image scrolling>
         <Image circular size="medium" src={compras} wrapped />
 
@@ -49,7 +48,7 @@ const ModalExampleScrollingContent = ({ usuarios }) => {
       </Modal.Content>
       <Modal.Actions>
         <Button onClick={() => setOpen(false)} primary>
-          Listo! <Icon name="chevron right" />
+          Great! <Icon name="chevron right" />
         </Button>
       </Modal.Actions>
     </Modal>

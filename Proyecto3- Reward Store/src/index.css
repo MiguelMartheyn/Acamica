@@ -15,6 +15,7 @@
   display: flex;
   padding: 15px;
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .user {
@@ -32,6 +33,10 @@
 .modal-points {
   display: flex;
   padding: 9px;
+}
+
+.semanticModalHistory{
+  padding-top: 15px;
 }
 
 /*Inicio Resposive Designe */

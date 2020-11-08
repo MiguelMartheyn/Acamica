@@ -21,7 +21,7 @@ const CardExampleCard = ({
     <Card color="blue">
       <Card.Content extra>
         <span className="span-semanticCard">
-          {cost >= points ? (
+          {cost > points ? (
             <SemanticCardNoCompra cost={cost} points={points} />
           ) : (
             <SemanticCardCompra

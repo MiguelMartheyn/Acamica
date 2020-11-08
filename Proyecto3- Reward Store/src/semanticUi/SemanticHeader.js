@@ -14,7 +14,7 @@ const HeaderExampleImage = ({
   historial,
   compra
 }) => (
-  <Header as="h2">
+  <Header as="h2" className='semanticHeader'>
     <Image
       circular
       src="https://react.semantic-ui.com/images/avatar/large/patrick.png"
@@ -34,7 +34,7 @@ const HeaderExampleImage = ({
         compra={compra}
       />
     </div>
-    <div>{compra && <SemanticModalHistory usuarios={usuarios} />}</div>
+    <div className='semanticModalHistory'><SemanticModalHistory usuarios={usuarios} /></div>
   </Header>
 );
 
