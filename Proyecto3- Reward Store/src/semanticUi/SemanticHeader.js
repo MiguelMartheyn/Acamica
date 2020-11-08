@@ -2,10 +2,18 @@ import React from "react";
 import { Header, Image } from "semantic-ui-react";
 import SemanticCoin from "./SemanticCoin";
 import SemanticModalCoin from "./SemanticModalCoin";
-import SemanticModalHistory from '../semanticUi/SemanticModalHistory';
+import SemanticModalHistory from "../semanticUi/SemanticModalHistory";
 import "../index.css";
 
-const HeaderExampleImage = ({ name, coin, usuarios, setUsuarios ,products,historial,compra}) => (
+const HeaderExampleImage = ({
+  name,
+  coin,
+  usuarios,
+  setUsuarios,
+  products,
+  historial,
+  compra
+}) => (
   <Header as="h2">
     <Image
       circular
@@ -26,17 +34,7 @@ const HeaderExampleImage = ({ name, coin, usuarios, setUsuarios ,products,histor
         compra={compra}
       />
     </div>
-    <div>
-
-    {compra&&
-      <SemanticModalHistory
-       
-        
-        usuarios={usuarios}
-        
-      />
-    }
-    </div>
+    <div>{compra && <SemanticModalHistory usuarios={usuarios} />}</div>
   </Header>
 );
 

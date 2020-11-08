@@ -3,7 +3,16 @@ import Menu from "./Menu";
 import main from "../images/main.png";
 import "../index.css";
 
-function Main({ usuarios, name, coin, setUsuarios,compra,setCompra,filtro,setFiltro}) {
+function Main({
+  usuarios,
+  name,
+  coin,
+  setUsuarios,
+  compra,
+  setCompra,
+  filtro,
+  setFiltro
+}) {
   return (
     <div>
       <div className="container-img-main">
@@ -28,7 +37,6 @@ function Main({ usuarios, name, coin, setUsuarios,compra,setCompra,filtro,setFil
         setCompra={setCompra}
         filtro={filtro}
         setFiltro={setFiltro}
-        
       />
     </div>
   );

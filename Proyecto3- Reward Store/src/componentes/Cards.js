@@ -2,11 +2,21 @@ import React from "react";
 import SubMenu from "./SubMenu";
 import SemanticCard from "../semanticUiCard/SemanticCard";
 
-function Cards({ usuarios,setUsuarios,pagina,setPagina,compra,setCompra,filtro,setFiltro }) {
-
-  
-   const val = usuarios.products? pagina === 1? usuarios.products.slice(0,16) :usuarios.products.slice(16,32)  : []
-
+function Cards({
+  usuarios,
+  setUsuarios,
+  pagina,
+  setPagina,
+  compra,
+  setCompra,
+  filtro,
+  setFiltro
+}) {
+  const val = usuarios.products
+    ? pagina === 1
+      ? usuarios.products.slice(0, 16)
+      : usuarios.products.slice(16, 32)
+    : [];
 
   const cards = usuarios.products ? (
     val.map((card) => (
@@ -27,19 +37,17 @@ function Cards({ usuarios,setUsuarios,pagina,setPagina,compra,setCompra,filtro,s
       />
     ))
   ) : (
-    <h1>No hay Productos disponibles</h1>
+    <h1>no products available</h1>
   );
 
-  
   return (
     <div>
       <div className="cards">{cards}</div>
       <SubMenu
-      pagina={pagina} 
-      setPagina={setPagina}
-      filtro={filtro}
-      setFiltro={setFiltro}
-      
+        pagina={pagina}
+        setPagina={setPagina}
+        filtro={filtro}
+        setFiltro={setFiltro}
       />
     </div>
   );

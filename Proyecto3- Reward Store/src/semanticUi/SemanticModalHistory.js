@@ -1,33 +1,37 @@
-import React from 'react'
-import { Button, Icon, Image, Modal } from 'semantic-ui-react'
-import compras from '../images/compras.png'
-import SemanticHistoryCard from './SemanticHistoryCard'
+import React from "react";
+import { Button, Icon, Image, Modal } from "semantic-ui-react";
+import compras from "../images/compras.png";
+import SemanticHistoryCard from "./SemanticHistoryCard";
 
-const ModalExampleScrollingContent = ({usuarios}) => {
-  const [open, setOpen] = React.useState(false)
+const ModalExampleScrollingContent = ({ usuarios }) => {
+  const [open, setOpen] = React.useState(false);
 
+  const val = usuarios.historial
+    ? usuarios.historial.filter((filter) => filter.img.url)
+    : [];
 
-  const val = usuarios.historial?  usuarios.historial.filter(filter => filter.img.url) : []
-
-
-  const cards = usuarios.historial ? usuarios.historial !== []? (
-    val.map((card) => (
-      <SemanticHistoryCard
-        name={card.name}
-        image={card.img.url}
-        createDate={card.createDate}
-        cost={card.cost}
-        key={card.productId}
-        category={card.category}
-        cost={card.cost}
-        points={usuarios.points}
-      />
-    ))
-  ): <h1>no products exchanged</h1> : (
+  const cards = usuarios.historial ? (
+    usuarios.historial !== [] ? (
+      val.map((card) => (
+        <SemanticHistoryCard
+          name={card.name}
+          image={card.img.url}
+          createDate={card.createDate}
+          cost={card.cost}
+          key={card.productId}
+          category={card.category}
+          cost={card.cost}
+          points={usuarios.points}
+        />
+      ))
+    ) : (
+      <h1>no products exchanged</h1>
+    )
+  ) : (
     <h1>no products exchanged</h1>
   );
 
-  console.log(usuarios)
+  console.log(usuarios);
   return (
     <Modal
       open={open}
@@ -37,22 +41,19 @@ const ModalExampleScrollingContent = ({usuarios}) => {
     >
       <Modal.Header>Historial de Compras</Modal.Header>
       <Modal.Content image scrolling>
-      <Image circular size='medium' src={compras} wrapped />
+        <Image circular size="medium" src={compras} wrapped />
 
         <Modal.Description>
-        
           <div className="cards">{cards}</div>
-          
-          
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
         <Button onClick={() => setOpen(false)} primary>
-          Listo! <Icon name='chevron right' />
+          Listo! <Icon name="chevron right" />
         </Button>
       </Modal.Actions>
     </Modal>
-  )
-}
+  );
+};
 
-export default ModalExampleScrollingContent
+export default ModalExampleScrollingContent;

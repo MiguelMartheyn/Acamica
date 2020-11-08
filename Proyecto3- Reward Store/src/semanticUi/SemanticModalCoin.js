@@ -2,7 +2,15 @@ import React from "react";
 import { Button, Header, Icon, Modal } from "semantic-ui-react";
 import SemanticCoinAumentar from "./SemanticCoinAumentar";
 
-function ModalExampleCloseIcon({ usuarios, setUsuarios, name, coin ,products,historial,compra}) {
+function ModalExampleCloseIcon({
+  usuarios,
+  setUsuarios,
+  name,
+  coin,
+  products,
+  historial,
+  compra
+}) {
   const [open, setOpen] = React.useState(false);
 
   return (

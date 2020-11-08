@@ -21,7 +21,7 @@ const CardExampleCard = ({
     <Card color="blue">
       <Card.Content extra>
         <span className="span-semanticCard">
-          {cost <= points ? (
+          {cost >= points ? (
             <SemanticCardNoCompra cost={cost} points={points} />
           ) : (
             <SemanticCardCompra
@@ -47,7 +47,10 @@ const CardExampleCard = ({
           <span className="date">{nombre}</span>
         </Card.Meta>
         <Card.Meta>
-          <span className="date"> <Icon name='money' >Cost:{cost}</Icon></span>
+          <span className="date">
+            {" "}
+            <Icon name="money">Cost:{cost}</Icon>
+          </span>
         </Card.Meta>
       </Card.Content>
     </Card>
@@ -55,4 +58,3 @@ const CardExampleCard = ({
 );
 
 export default CardExampleCard;
-

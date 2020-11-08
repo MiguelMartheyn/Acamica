@@ -151,20 +151,18 @@
 
 /* Inicio estilos card */
 
-.cards{
+.cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 15px;
   padding: 15px;
-
 }
-.card{
+.card {
   padding: 10px;
-  
 }
 
-.card:hover{
+.card:hover {
   background-color: gray;
   opacity: 90%;
   font-weight: bold;
@@ -172,37 +170,29 @@
   margin: 0%;
 }
 
-
 /* .span-semanticCard{
  
   cursor: pointer;
 } */
 
-
-.semanticCardCompra{
+.semanticCardCompra {
   margin-left: 80%;
   cursor: pointer;
- 
 }
 
-
-.semanticCardNoCompraText{
-  
+.semanticCardNoCompraText {
   padding-top: 5%;
 }
-.semanticCardNoCompraCoin{
-  
+.semanticCardNoCompraCoin {
   cursor: pointer;
 }
 
 /* Final estilos card */
 
 /*Inicio estilos submenu */
-.submenu{
+.submenu {
   padding-right: 60px;
   padding-left: 60px;
 }
-
-
 
 /* Final estilos submenu */

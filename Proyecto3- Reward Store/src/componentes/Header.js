@@ -9,13 +9,12 @@ import { user } from "../servicios/GetUser";
 function Header() {
   const [usuarios, setUsuarios] = React.useState(0);
   const [fetched, setFetched] = React.useState(false);
-  const [compra,setCompra]= React.useState(false);
-  const [filtro,setFiltro]= React.useState('');
-  
+  const [compra, setCompra] = React.useState(false);
+  const [filtro, setFiltro] = React.useState("");
 
   useEffect(() => {
-    user({ usuarios, setUsuarios, fetched, setFetched,compra });
-  }, [fetched,usuarios]);
+    user({ usuarios, setUsuarios, fetched, setFetched, compra });
+  }, [fetched, usuarios]);
 
   const styleLink = document.createElement("link");
   styleLink.rel = "stylesheet";
@@ -34,7 +33,6 @@ function Header() {
           products={usuarios.products}
           historial={usuarios.historial}
           compra={compra}
-          
         />
       </div>
 
@@ -47,7 +45,6 @@ function Header() {
         setCompra={setCompra}
         filtro={filtro}
         setFiltro={setFiltro}
-        
       />
     </div>
   );
