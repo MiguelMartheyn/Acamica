@@ -2,7 +2,7 @@ import React from "react";
 import SubMenu from "./SubMenu";
 import SemanticCard from "../semanticUiCard/SemanticCard";
 
-function Cards({ usuarios,pagina,setPagina,compra,setCompra }) {
+function Cards({ usuarios,setUsuarios,pagina,setPagina,compra,setCompra }) {
 
   
    const val = usuarios.products? pagina === 1? usuarios.products.slice(0,16) :usuarios.products.slice(16,32)  : []
@@ -11,7 +11,7 @@ function Cards({ usuarios,pagina,setPagina,compra,setCompra }) {
   const cards = usuarios.products ? (
     val.map((card) => (
       <SemanticCard
-        name={card.name}
+        nombre={card.name}
         image={card.img.url}
         createDate={card.createDate}
         cost={card.cost}
@@ -21,6 +21,9 @@ function Cards({ usuarios,pagina,setPagina,compra,setCompra }) {
         points={usuarios.points}
         compra={compra}
         setCompra={setCompra}
+        usuarios={usuarios}
+        setUsuarios={setUsuarios}
+        id={card._id}
       />
     ))
   ) : (

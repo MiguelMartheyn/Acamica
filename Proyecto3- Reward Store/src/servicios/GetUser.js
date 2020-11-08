@@ -11,6 +11,7 @@ export function user({ usuarios, setUsuarios, fetched, setFetched ,compra}) {
   
     let name;
     let coin;
+    let historial;
   
     if (!fetched) {
       fetch(endPoint, requestInit)
@@ -23,7 +24,8 @@ export function user({ usuarios, setUsuarios, fetched, setFetched ,compra}) {
           });
           name = userList.name;
           coin = userList.points;
-          products({ usuarios, setUsuarios, name, coin ,compra});
+          historial=usuarios.historial;
+          products({ usuarios, setUsuarios, name, coin ,compra,historial});
         });
     }
   }
@@ -74,7 +76,7 @@ export function user({ usuarios, setUsuarios, fetched, setFetched ,compra}) {
     request.send(JSON.stringify(body));
   }
   
-  function products({ usuarios, setUsuarios, name, coin,compra }) {
+  function products({ usuarios, setUsuarios, name, coin,compra,historial }) {
     const requestInit = {
       headers: {
         "Content-Type": "application/json",
@@ -91,31 +93,80 @@ export function user({ usuarios, setUsuarios, fetched, setFetched ,compra}) {
         setUsuarios({
           name: name,
           points: coin,
-          products: userList
+          products: userList,
+          historial: historial
         });
          
       });
   }
   
-  // export default function historial({ usuarios, setUsuarios, name, coin ,userList}) {
-  //   const requestInit = {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization:
-  //         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk"
-  //     }
-  //   };
   
-  //   const endPoint = "https://coding-challenge-api.aerolab.co/user/history";
+
+
+  export function canjear({
+    setCompra,id,setUsuarios,name,points,products,historial,fetched,setFetched ,cost
+  }) {
+    var request = new XMLHttpRequest();
   
-  //   fetch(endPoint, requestInit)
-  //     .then((response) => response.json())
-  //     .then((userList2) => {
-  //       setUsuarios({
-  //         name: name,
-  //         points: coin,
-  //         products: userList,
-  //         historial:userList2
-  //       });
-  //     });
-  // }
+    request.open("POST", 'https://coding-challenge-api.aerolab.co/redeem');
+  
+    request.setRequestHeader("Content-Type", "application/json");
+    request.setRequestHeader("Accept", "application/json");
+    request.setRequestHeader(
+      "Authorization",
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk"
+    );
+  
+    request.onreadystatechange = function () {
+      if (this.readyState === 4) {
+        setFetched(true);
+        setUsuarios({
+          name: name,
+          points: (points-cost),
+          products: products,
+          historial:historial
+        });
+        
+        history({setUsuarios,name,points,products,historial,setCompra,cost});
+        console.log("Status:", this.status);
+        console.log("Headers:", this.getAllResponseHeaders());
+        console.log("Body:", this.responseText);
+      }
+      
+    };
+  
+    var body = {
+      productId: id
+    };
+  
+    request.send(JSON.stringify(body));
+  }
+
+
+
+  function history({ setUsuarios,name,points,products,setCompra,cost}) {
+    var request = new XMLHttpRequest();
+
+request.open('GET', 'https://coding-challenge-api.aerolab.co/user/history');
+
+request.setRequestHeader('Content-Type', 'application/json');
+request.setRequestHeader('Accept', 'application/json');
+request.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRkOWU5OTQ0NGZlNDAwNmRhOTkyNGQiLCJpYXQiOjE1OTE1ODIzNjF9.-f40dyUIGFsBSB_PTeBGdSLI58I21-QBJNi9wkODcKk');
+
+request.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    console.log('Status:', this.status);
+    console.log('Headers:', this.getAllResponseHeaders());
+    console.log('Body:', this.responseText);
+    setUsuarios({
+      name:name,
+      points: points-cost,
+      products:products,
+      historial: this.responseText
+    })
+    
+  }
+};
+
+request.send();
+  }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Header, Image, Modal } from 'semantic-ui-react'
 import coin from '../images/coin.svg'
+import cry from '../images/cry.png'
 
 function ModalExampleModal({cost, points}) {
   const [open, setOpen] = React.useState(false)
@@ -16,24 +17,21 @@ function ModalExampleModal({cost, points}) {
         
           <Image circular src={coin} className='semanticCardNoCompraCoin' /> </Header>}
     >
-      <Modal.Header>Select a Photo</Modal.Header>
+      <Modal.Header>Compra No Procesada</Modal.Header>
       <Modal.Content image>
-        <Image size='medium' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' wrapped />
+        <Image size='medium' src={cry} title='expresión png de pngtree.com' wrapped />
         <Modal.Description>
-          <Header>Default Profile Image</Header>
+          <Header>Points faltantes : {cost-points}</Header>
           <p>
-            We've found the following gravatar image associated with your e-mail
-            address.
+            Necesitas mas Points, Solicitalos!!!
           </p>
-          <p>Is it okay to use this photo?</p>
+          {/* <a href='htttps://.pngtree.com/so/expresión'>expresión png de pngtree.com</a> */}
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
-        <Button color='black' onClick={() => setOpen(false)}>
-          Nope
-        </Button>
+        
         <Button
-          content="Yep, that's me"
+          content="Salir"
           labelPosition='right'
           icon='checkmark'
           onClick={() => setOpen(false)}

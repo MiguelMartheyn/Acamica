@@ -24,6 +24,7 @@ function Menu({ usuarios, coin, name, setUsuarios,compra,setCompra}) {
         setPagina={setPagina}
         compra={compra}
         setCompra={setCompra}
+        
       />
       
     </div>
