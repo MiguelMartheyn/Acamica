@@ -6,30 +6,22 @@ import SemanticHistoryCard from "./SemanticHistoryCard";
 const ModalExampleScrollingContent = ({ usuarios }) => {
   const [open, setOpen] = React.useState(false);
 
-
- 
-    
-  
-
-  const cards = usuarios.historial ? 
-    
-      usuarios.historial.map((card) => (
-        <SemanticHistoryCard
-          name={card.name}
-          image={card.img.url}
-          createDate={card.createDate}
-          cost={card.cost}
-          
-          key={card.createDate}
-          category={card.category}
-          cost={card.cost}
-          points={usuarios.points}
-        />
-      ))
-     : (
-      <h1>no products exchanged</h1>
-    )
- 
+  const cards = usuarios.historial ? (
+    usuarios.historial.map((card) => (
+      <SemanticHistoryCard
+        name={card.name}
+        image={card.img.url}
+        createDate={card.createDate}
+        cost={card.cost}
+        key={card.createDate}
+        category={card.category}
+        cost={card.cost}
+        points={usuarios.points}
+      />
+    ))
+  ) : (
+    <h1>no products exchanged</h1>
+  );
 
   return (
     <Modal

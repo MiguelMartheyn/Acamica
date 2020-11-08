@@ -26,7 +26,7 @@ export function user({ usuarios, setUsuarios, fetched, setFetched, compra }) {
         name = userList.name;
         coin = userList.points;
         historial = userList.redeemHistory;
-        
+
         products({ usuarios, setUsuarios, name, coin, compra, historial });
       });
   }
@@ -135,7 +135,7 @@ export function canjear({
         historial: historial
       });
 
-      val= points-cost
+      val = points - cost;
       history({
         setUsuarios,
         name,
@@ -143,9 +143,9 @@ export function canjear({
         products,
         historial,
         setCompra,
-        cost,val
+        cost,
+        val
       });
-      
     }
   };
 
@@ -156,33 +156,7 @@ export function canjear({
   request.send(JSON.stringify(body));
 }
 
- function history({ setUsuarios, name, points, products, setCompra, cost ,val}) {
-  // var request = new XMLHttpRequest();
-
-  // request.open("GET", "https://coding-challenge-api.aerolab.co/user/history");
-
-  // request.setRequestHeader("Content-Type", "application/json");
-  // request.setRequestHeader("Accept", "application/json");
-  // request.setRequestHeader(
-  //   "Authorization",
-  //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjlmNzRmMDYwOGE4ODAwMTk1YjliZDgiLCJpYXQiOjE2MDQyODU2ODB9.ctaykhWrBlhUdTgGlnbksoRx3LwszENpALaY64K_OuY"
-  // );
-
-  // request.onreadystatechange = function () {
-  //   if (this.readyState === 4) {
-
-  //     setUsuarios({
-  //       name: name,
-  //       points: val,
-  //       products: products,
-  //       historial: this.responseText
-  //     });
-   
-  //   }
-  // };
-
-  // request.send();
-
+function history({ setUsuarios, name, products, val }) {
   const requestInit = {
     headers: {
       "Content-Type": "application/json",
@@ -197,15 +171,12 @@ export function canjear({
     .then((response) => response.json())
     .then((userList) => {
       setTimeout(() => {
-      setUsuarios({
-        name: name,
-        points: val,
-        products: products,
-        historial: userList
-      });
-    }, 5000);
+        setUsuarios({
+          name: name,
+          points: val,
+          products: products,
+          historial: userList
+        });
+      }, 5000);
     });
-
-
 }
-
