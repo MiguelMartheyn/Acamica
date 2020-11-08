@@ -2,7 +2,7 @@ import React from "react";
 import SubMenu from "./SubMenu";
 import SemanticCard from "../semanticUiCard/SemanticCard";
 
-function Cards({ usuarios,setUsuarios,pagina,setPagina,compra,setCompra }) {
+function Cards({ usuarios,setUsuarios,pagina,setPagina,compra,setCompra,filtro,setFiltro }) {
 
   
    const val = usuarios.products? pagina === 1? usuarios.products.slice(0,16) :usuarios.products.slice(16,32)  : []
@@ -37,6 +37,8 @@ function Cards({ usuarios,setUsuarios,pagina,setPagina,compra,setCompra }) {
       <SubMenu
       pagina={pagina} 
       setPagina={setPagina}
+      filtro={filtro}
+      setFiltro={setFiltro}
       
       />
     </div>

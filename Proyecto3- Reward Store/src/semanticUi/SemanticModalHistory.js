@@ -23,8 +23,8 @@ const ModalExampleScrollingContent = ({usuarios}) => {
         points={usuarios.points}
       />
     ))
-  ): <h1>No hay Productos canjeados</h1> : (
-    <h1>No hay Productos canjeados</h1>
+  ): <h1>no products exchanged</h1> : (
+    <h1>no products exchanged</h1>
   );
 
   console.log(usuarios)

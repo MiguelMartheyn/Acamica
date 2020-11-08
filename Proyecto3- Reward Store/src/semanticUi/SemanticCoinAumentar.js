@@ -28,7 +28,7 @@ function ButtonExampleLabeled({ usuarios, setUsuarios, name, coin,products,histo
           <Icon name="money" />
         </Button>
         <Label as="a" basic pointing="left">
-          1,000
+          1000
         </Label>
       </Button>
 
@@ -37,7 +37,7 @@ function ButtonExampleLabeled({ usuarios, setUsuarios, name, coin,products,histo
           <Icon name="money" />
         </Button>
         <Label as="a" basic pointing="left">
-          5,000
+          5000
         </Label>
       </Button>
 
@@ -46,11 +46,11 @@ function ButtonExampleLabeled({ usuarios, setUsuarios, name, coin,products,histo
           <Icon name="money" />
         </Button>
         <Label as="a" basic pointing="left">
-          7,500
+          7500
         </Label>
       </Button>
 
-      {number > 0 && <h1> Aumentaste tus Points en: {number}</h1>}
+      {number > 0 && <h1> you increased your points in: {number}</h1>}
     </div>
   );
 }

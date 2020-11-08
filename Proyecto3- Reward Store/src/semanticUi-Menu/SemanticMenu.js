@@ -1,7 +1,8 @@
 import React from "react";
 import { Button, Icon } from "semantic-ui-react";
+import {filtroCategoria,filtroBajoPrecio,filtroAltoPrecio} from '../servicios/Filtros'
 
-const ButtonExampleAnimated = ({pagina,setPagina}) => (
+const ButtonExampleAnimated = ({pagina,setPagina,usuarios,setUsuarios,filtro,setFiltro}) => (
   <div className="semanticMenu">
     <div className="semanticFirst">
       <div className="semanticMenuText">
@@ -10,20 +11,20 @@ const ButtonExampleAnimated = ({pagina,setPagina}) => (
         <p className="semanticMenuTextProduct">16-32 of 32 Products</p>}
         <p>Sort by:</p>
       </div>
-      <Button animated circular>
-        <Button.Content visible>Most recent</Button.Content>
+      <Button animated circular onClick={()=>filtroCategoria({usuarios,setUsuarios,filtro,setFiltro})}>
+        <Button.Content visible >Category</Button.Content>
         <Button.Content hidden>
           <Icon name="arrow right" />
         </Button.Content>
       </Button>
-      <Button animated circular>
-        <Button.Content visible>Lowest Price</Button.Content>
+      <Button animated circular onClick={()=>filtroBajoPrecio({usuarios,setUsuarios,filtro,setFiltro})}>
+        <Button.Content visible >Lowest Price</Button.Content>
         <Button.Content hidden>
           <Icon name="arrow right" />
         </Button.Content>
       </Button>
-      <Button animated circular>
-        <Button.Content visible>Highest price</Button.Content>
+      <Button animated circular onClick={()=>filtroAltoPrecio({usuarios,setUsuarios,filtro,setFiltro})}>
+        <Button.Content visible >Highest price</Button.Content>
         <Button.Content hidden>
           <Icon name="arrow right" />
         </Button.Content>

@@ -13,10 +13,10 @@ function ModalExampleCloseIcon({ usuarios, setUsuarios, name, coin ,products,his
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
     >
-      <Header icon="money" content="Aumentar Points" />
+      <Header icon="money" content="Increase points" />
       <Modal.Content>
-        <p>¿ Deseas mas Points?</p>
-        <p>Por favor elige el numero de Points que deseas</p>
+        <p>¿ Do you want more points??</p>
+        <p>Please choose the number of Points you want</p>
 
         <SemanticCoinAumentar
           usuarios={usuarios}

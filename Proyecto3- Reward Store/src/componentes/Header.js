@@ -9,7 +9,8 @@ import { user } from "../servicios/GetUser";
 function Header() {
   const [usuarios, setUsuarios] = React.useState(0);
   const [fetched, setFetched] = React.useState(false);
-  const [compra,setCompra]= React.useState(false)
+  const [compra,setCompra]= React.useState(false);
+  const [filtro,setFiltro]= React.useState('');
   
 
   useEffect(() => {
@@ -44,6 +45,8 @@ function Header() {
         coin={usuarios.points}
         compra={compra}
         setCompra={setCompra}
+        filtro={filtro}
+        setFiltro={setFiltro}
         
       />
     </div>

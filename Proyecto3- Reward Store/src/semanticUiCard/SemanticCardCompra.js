@@ -19,7 +19,7 @@ function ModalExampleModal({ image,category,nombre,setCompra,id,setUsuarios,name
         <img className="semanticCardCompra" title="Comprar" src={buyblue} onClick={()=>canjear({setCompra,id,setUsuarios,name,points,products,historial,fetched,setFetched,cost })}/>
       }
     >
-      <Modal.Header>Compra Realizada!</Modal.Header>
+      <Modal.Header>You've redeem the product successfully</Modal.Header>
       <Modal.Content image>
         <Image
           size="medium"
@@ -28,7 +28,7 @@ function ModalExampleModal({ image,category,nombre,setCompra,id,setUsuarios,name
           title="dinero png de pngtree.com"
         />
         <Modal.Description>
-          <Header>Producto Canjeado</Header>
+          <Header>redeemed product</Header>
           <div className="card">
             <Card color="blue">
               <Image src={image} wrapped ui={false} />
@@ -45,7 +45,7 @@ function ModalExampleModal({ image,category,nombre,setCompra,id,setUsuarios,name
       </Modal.Content>
       <Modal.Actions>
         <Button
-          content="Listo!"
+          content="Great!"
           labelPosition="right"
           icon="checkmark"
           onClick={() => setOpen(false)}
